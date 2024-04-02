@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de gestión de biblioteca</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Sistema de gestión de biblioteca</h1>
+
+    <!-- Formulario para agregar un nuevo libro -->
+    <h2>Agregar Libro</h2>
+    <form id="addBookForm" onsubmit="return validateBook()">
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" required><br>
+
+        <label for="author">Autor:</label>
+        <input type="text" id="author" name="author" required><br>
+
+        <label for="isbn">ISBN:</label>
+        <input type="text" id="isbn" name="isbn" required><br>
+
+        <button type="submit">Agregar Libro</button>
+        
+
+    </form>
+
+    <!-- Formulario para buscar libros -->
+    <h2>Buscar Libro</h2>
+	<form id="searchBookForm">
+	    <div>
+	        <label for="searchKeyword">Buscar por título, autor o ISBN:</label>
+	        <input type="text" id="searchKeyword" name="searchKeyword" required>
+	    </div>
+	    <button type="submit">Buscar</button>
+	</form>
+
+    <!-- Tabla para mostrar los resultados de la búsqueda -->
+    <h2 id="searchResultsHeader" style="display: none;">Resultados de la Búsqueda</h2>
+    <table id="searchResultsTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>ISBN</th>
+                <th>Disponible</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se mostrarán los resultados de la búsqueda -->
+        </tbody>
+    </table>
+    <p id="noResultsMessage" style="display: none; color: red;">No se encontraron resultados.</p>
+
+    <!-- Tabla para mostrar todos los libros -->
+    <h2>Lista de Libros</h2>
+    <table id="booksTable">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>ISBN</th>
+                <th>Disponible</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se mostrarán todos los libros -->
+        </tbody>
+    </table>
+
+    <script  src="js/script.js"></script>
+</body>
+</html>
